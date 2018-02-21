@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="闲心  小憩">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      mufengs 平行空间
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>mufengs 平行空间</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2></h2>
+  <p class="post-date">2018-02-21</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><pre><code>title: docker基础命令详解    date: &apos;2017 / 02 / 02 20: 46: 25&apos;     categories:         -linux     tags:         -shell docker基础命令详解新睿云服务器60天免费使用，快来体验！&gt;&gt;&gt; &amp;nbsp;&amp;nbsp;Commands:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;attach&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Attach&amp;nbsp;to&amp;nbsp;a&amp;nbsp;running&amp;nbsp;container &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;build&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Build&amp;nbsp;an&amp;nbsp;image&amp;nbsp;from&amp;nbsp;a&amp;nbsp;Dockerfile &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;commit&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Create&amp;nbsp;a&amp;nbsp;new&amp;nbsp;image&amp;nbsp;from&amp;nbsp;a&amp;nbsp;container&apos;s&amp;nbsp;changes&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;cp&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Copy&amp;nbsp;files/folders&amp;nbsp;from&amp;nbsp;a&amp;nbsp;container&apos;s&amp;nbsp;filesystem&amp;nbsp;to&amp;nbsp;the&amp;nbsp;host&amp;nbsp;path&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;create&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Create&amp;nbsp;a&amp;nbsp;new&amp;nbsp;container&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;diff&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Inspect&amp;nbsp;changes&amp;nbsp;on&amp;nbsp;a&amp;nbsp;container&apos;s&amp;nbsp;filesystem&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;events&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Get&amp;nbsp;real&amp;nbsp;time&amp;nbsp;events&amp;nbsp;from&amp;nbsp;the&amp;nbsp;server&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;exec&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Run&amp;nbsp;a&amp;nbsp;command&amp;nbsp;in&amp;nbsp;a&amp;nbsp;running&amp;nbsp;container&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; export&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Stream&amp;nbsp;the&amp;nbsp;contents&amp;nbsp;of&amp;nbsp;a&amp;nbsp;container&amp;nbsp;as&amp;nbsp;a&amp;nbsp;tar&amp;nbsp;archive&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;history&amp;nbsp;&amp;nbsp;&amp;nbsp;Show&amp;nbsp;the&amp;nbsp;history&amp;nbsp;of&amp;nbsp;an&amp;nbsp;image&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;images&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;List&amp;nbsp;images&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;import&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Create&amp;nbsp;a&amp;nbsp;new&amp;nbsp;filesystem&amp;nbsp;image&amp;nbsp;from&amp;nbsp;the&amp;nbsp;contents&amp;nbsp;of&amp;nbsp;a&amp;nbsp;tarball&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; info&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Display&amp;nbsp;system-wide&amp;nbsp;information&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;inspect&amp;nbsp;&amp;nbsp;&amp;nbsp;Return&amp;nbsp;low-level&amp;nbsp;information&amp;nbsp;on&amp;nbsp;a&amp;nbsp;container&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;kill&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Kill&amp;nbsp;a&amp;nbsp;running&amp;nbsp;container&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;load&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Load&amp;nbsp;an&amp;nbsp;image&amp;nbsp;from&amp;nbsp;a&amp;nbsp;tar&amp;nbsp;archive&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;login&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Register&amp;nbsp;or&amp;nbsp;log&amp;nbsp;in&amp;nbsp;to&amp;nbsp;a&amp;nbsp;Docker&amp;nbsp;registry&amp;nbsp;server&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;logout&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Log&amp;nbsp;out&amp;nbsp;from&amp;nbsp;a&amp;nbsp;Docker&amp;nbsp;registry&amp;nbsp;server&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;logs&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Fetch&amp;nbsp;the&amp;nbsp;logs&amp;nbsp;of&amp;nbsp;a&amp;nbsp;container&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;port&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lookup&amp;nbsp;the&amp;nbsp;public-facing&amp;nbsp;port&amp;nbsp;that&amp;nbsp;is&amp;nbsp;NAT-ed&amp;nbsp;to&amp;nbsp;PRIVATE_PORT&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;pause&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Pause&amp;nbsp;all&amp;nbsp;processes&amp;nbsp;within&amp;nbsp;a&amp;nbsp;container&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ps&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;List&amp;nbsp;containers&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;pull&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Pull&amp;nbsp;an&amp;nbsp;image&amp;nbsp;or&amp;nbsp;a&amp;nbsp;repository&amp;nbsp;from&amp;nbsp;a&amp;nbsp;Docker&amp;nbsp;registry&amp;nbsp;server&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;push&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Push&amp;nbsp;an&amp;nbsp;image&amp;nbsp;or&amp;nbsp;a&amp;nbsp;repository&amp;nbsp;to&amp;nbsp;a&amp;nbsp;Docker&amp;nbsp;registry&amp;nbsp;server&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; restart&amp;nbsp;&amp;nbsp;&amp;nbsp;Restart&amp;nbsp;a&amp;nbsp;running&amp;nbsp;container&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;rm&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Remove&amp;nbsp;one&amp;nbsp;or&amp;nbsp;more&amp;nbsp;containers&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;rmi&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Remove&amp;nbsp;one&amp;nbsp;or&amp;nbsp;more&amp;nbsp;images&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; run&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Run&amp;nbsp;a&amp;nbsp;command&amp;nbsp;in&amp;nbsp;a&amp;nbsp;new&amp;nbsp;container&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;save&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Save&amp;nbsp;an&amp;nbsp;image&amp;nbsp;to&amp;nbsp;a&amp;nbsp;tar&amp;nbsp;archive&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;search&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Search&amp;nbsp;for&amp;nbsp;an&amp;nbsp;image&amp;nbsp;on&amp;nbsp;the&amp;nbsp;Docker&amp;nbsp;Hub&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;start&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Start&amp;nbsp;a&amp;nbsp;stopped&amp;nbsp;container&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;stop&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Stop&amp;nbsp;a&amp;nbsp;running&amp;nbsp;container&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;tag&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tag&amp;nbsp;an&amp;nbsp;image&amp;nbsp;into&amp;nbsp;a&amp;nbsp;repository&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;top&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lookup&amp;nbsp;the&amp;nbsp;running&amp;nbsp;processes&amp;nbsp;of&amp;nbsp;a&amp;nbsp;container&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;unpause&amp;nbsp;&amp;nbsp;&amp;nbsp;Unpause&amp;nbsp;a&amp;nbsp;paused&amp;nbsp;container&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; version&amp;nbsp;&amp;nbsp;&amp;nbsp;Show&amp;nbsp;the&amp;nbsp;Docker&amp;nbsp;version&amp;nbsp;information&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;wait&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Block&amp;nbsp;until&amp;nbsp;a&amp;nbsp;container&amp;nbsp;stops,&amp;nbsp;then&amp;nbsp;print&amp;nbsp;its&amp;nbsp;exit&amp;nbsp;code&amp;nbsp;&amp;nbsp;&amp;nbsp;总结一下常用命令:其中&lt;&gt;阔起来的参数为必选，[]阔起来为可选使用image来创建container:使用repository来创建container, 这时默认使用tag为lastest的image:提交当前container为一个image，顺便带上作者信息，并指定repository 和 tag启动一个container:可以看此container到正在运行中:attach这个container:进入container:TODO: 为何要使用 -i 和 -t镜像ubuntu:12.04没有vi，没法编辑/etc/apt/sources.list现在本地有一份，想上传上去首先映射端口(宿主的2222端口和container的33333端口映射):container上监听33333：本地使用22222端口传输:但是这里很好奇为啥是监听在ipv4的地址上?关于删除时的依赖关系，按照提示删除就行了比如删除images时，需要先删除通过它创建的所有containers:且删除images时也可能会遇到依赖其它的images，比如直接删除父镜像时，就会提示需要先删除子镜像。可以通过:来查看，不过官方提示&amp;nbsp;--tree&amp;nbsp;已经弃用了，会在以后的版本去掉.首先清空所有containers:然后以树形结构查看依赖关系:现在准备删除12.10版本的父镜像 cf8dc907452c, 会提示有冲突，删不掉:但是可以删除叶子节点 a7cf8ae4e998:docker 的 containers之间共享目录是通过&amp;nbsp;volume&amp;nbsp;。docker run&amp;nbsp;命令使用&amp;nbsp;-v&amp;nbsp;可以绑定一个volume,&amp;nbsp;-v&amp;nbsp;可以使用多次，创建多个volume:使用 mount 看到 /tmp/tankywoo 已经被mount了:查看 /tmp/tankywoo 目录下，是空的:然后在宿主机新建一个container，来绑定这个volume:按照 docker run 的命令行参数:有问题:必须像short option的方式使用:也可以看到 /tmp/tankywoo 目录，并且是空的，然后新建一个文件:再看看之前那个container:也有这个文件了参考默认情况下，如果使用ctrl-c退出container,那么container也会stop按ctrl-p ctrl-q可以退出到宿主机，而保持container仍然在运行关于 Docker 被墙，老甘的文章里提到的修改hosts文件，先mark，未验证:有时docker执行不了任何命令(会卡住)，包括重启docker server，在日志里看到这些:Docker images are built up in layers. So, for instance, if you need to run WordPress, you would build the Ubuntu layer, add a layer for Apache2 web server, add a PHP layer and then a layer for the WordPress files. Lower layers can be re-used. We might take the PHP layer and layer on Drupal instead of WordPress, or update our WordPress layer with a newer version or Wordpress.Because we can re-use layers, we can make new docker images very cheaply. We can create a new docker image by changing just a single line of one file and we do not have to rebuild the whole stack.The beauty of docker images being “just files” means that the difference between two docker images is just a diff of the files they contain.Hykes Explains DockerThe Docker Guidebook&amp;nbsp;的简单对比:Image&amp;nbsp;: An image is a read only layer used to build a container. They do not change.Container&amp;nbsp;: Is basically a self contained runtime environment that is built using one or more images. You can commit your changes to a container and create an image.index / registry&amp;nbsp;: These are public or private servers where people can upload their repositories so they can easily share what they made.Repository&amp;nbsp;: A repository is a group of images located in the docker registry. There are two types of repositories, Top level and user repositories. Top level repositories don&apos;t have a &apos;/&apos; in the name and they are usually reserved for base images. These Top level repositories is what most people build their repositories on top of. They are controlled by the maintainers of Docker. User repositories are repositories that anyone can upload into the registry and share with other people.说直接点，Image和Container最容易理解和对比，它俩的关系就像类与类的实例这两的关系一样。其实Index和Registry也有区别，主要就是Index存储的是用户信息、images的checksum；而Registry存储的是images。具体见官方文档Registry &amp; Index Spec。另外，关于Repository与Registry和Image又是什么关系?以这个为例这里的ubuntu是image名称吗？(后面解答)一个image完整的名称是:docker整体和Github非常像，image管理也不例外。其中，如果username没有写，则被认为是官方认证过的image。如前面提到，如果tag没有写，则被认为tag是lastest。另外，如果username写了，如 tankywoo/ubuntu，则会在官方index中查找username为tankywoo的ubuntu仓库；如果写的如上10.2.15.190:5000/tankywoo，则10.2.15.190:5000则被认为是第三方registry的地址。所以如上所说，ubuntu并不是image的名称，而是repository的名称。再看看/var/lib/docker/&amp;nbsp;下的&amp;nbsp;repositories-aufs，这是一个repositories的json列表:20170526
+</code></pre></section>
+    <!-- Tags START -->
+    
+    <!-- Tags END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="nav">none</ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2018/02/21/26.html/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "mufengcoding";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "",
+        owner: "mufengcoding",
+        repo: "mufengs.github.io",
+        oauth: {
+          client_id: "fffeca946155c9998dca",
+          client_secret: "180b7ed7559d3642b0b546eaeb69bc8deaf7cd63"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
