@@ -10,7 +10,7 @@
   
   <title>
     
-      mufengs 平行空间
+      docker 实战01 制作docsify镜像 | mufengs 平行空间
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,7 +112,7 @@
 </header>
 
     <div id="article-banner">
-  <h2></h2>
+  <h2>docker 实战01 制作docsify镜像</h2>
   <p class="post-date">2018-03-12</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -121,15 +121,22 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><hr>
-<p>title: docker 实战01 制作docsify镜像<br>date: ‘2017 / 03 / 12 20: 46: 25’<br>categories:<br> -docker<br>tags:        </p>
-<h2 id="docker"><a href="#docker" class="headerlink" title=" -docker "></a> -docker </h2><p>##dockerfile如下</p>
+    <section class="markdown-content"><p>##dockerfile如下</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">From Node:6</span><br><span class="line">Maintainer Mufeng &lt;Mufeng5619@Gmail.Com&gt;</span><br><span class="line">Run Npm I Docsify-Cli -G</span><br><span class="line">Run Mkdir Docs</span><br><span class="line">Run Docsify Init ./Docs</span><br><span class="line">Expose 3000</span><br><span class="line">Cmd Docsify Serve Docs</span><br></pre></td></tr></table></figure>
 <p>ps:<br>Maintainer 主要是作者信息<br>Cmd 后面直接跟命令 启动镜像的时候就不需要了 不然会覆盖</p>
 <p>##使用<br>docker build -t dockerdocs:1.2 .<br>docker run -d -p 8234:3000 –name=”doc” -v /media/sun/工作/代码仓库/docker.mufengs.com/docs:/docs dockerdocs:1.2</p>
 <p>这里需要注意一下的是  第一个宿主机的路径最好是全路径 不然有点小问题</p>
 </section>
     <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#docker" >
+    <span class="tag-code">docker</span>
+  </a>
+
+      </div>
     
     <!-- Tags END -->
     <!-- 打赏 START -->
@@ -173,7 +180,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#docker"><span class="toc-nav-text"> -docker </span></a></li></ol>
+      <ol class="nav">none</ol>
     
   </div>
 </aside>
@@ -239,7 +246,7 @@
     var gitmentConfig = "mufengcoding";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "",
+        id: "docker 实战01 制作docsify镜像",
         owner: "mufengcoding",
         repo: "mufengs.github.io",
         oauth: {
