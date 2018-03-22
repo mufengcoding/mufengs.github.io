@@ -10,7 +10,7 @@
   
   <title>
     
-      Tags | mufengs 平行空间
+      mufengs 平行空间
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
       
         <li class="list-item">
           
-            <a href="/" class="item-link">Home</a>
+            <a href="/" class="item-link active">Home</a>
           
         </li>
       
@@ -78,7 +78,7 @@
         
           <li class="menu-item">
             
-              <a href="/" class="menu-link">Home</a>
+              <a href="/" class="menu-link mobile-active">Home</a>
             
           </li>
         
@@ -111,141 +111,44 @@
   </div>
 </header>
 
-    <div id="article-banner">
-  <h2>Tags</h2>
-  <p class="post-date">标签检索</p>
-</div>
-<main class="app-body">
-  <div id="tag-cloud">
-    
-      <a class="tag0" data-name="tag-docker">docker</a>
-    
-      <a class="tag3" data-name="tag-rancher">rancher</a>
-    
-      <a class="tag3" data-name="tag-life">life</a>
-    
-      <a class="tag2" data-name="tag-shell">shell</a>
-    
-      <a class="tag0" data-name="tag-project">project</a>
-    
-      <a class="tag1" data-name="tag-shell proxy">shell proxy</a>
-    
-      <a class="tag2" data-name="tag-shell powershell share">shell powershell share</a>
-    
-  </div>
+    <main class="app-body">
   
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-docker">docker</h3>
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2018/02/02/one/">服务器定时从git上更新代码</a>
+      </h2>
+      <p class="article-date">February 2, 2018</p>
       
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/03/16/docker02/">docker 实战02 搭建vm的harbor仓库</a>
-          </li>
-        </ul>
         
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/03/12/docker01/">docker 实战01 制作docsify镜像</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-rancher">rancher</h3>
+  <a href="/tags#shell" >
+    <span class="tag-code">shell</span>
+  </a>
+
       
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/03/16/k8s/">ranhcer公开课第三期第一课 docker 基础</a>
-          </li>
-        </ul>
+      <div class="article-summary">
         
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-life">life</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/03/04/life2/">懒惰是最大的敌人</a>
-          </li>
-        </ul>
+          如下
+12[root@vultr blog]# crontab -l0 1 * * * /root/update.sh
+
         
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/02/21/person_1/">浮世三千</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-shell">shell</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/02/02/one/">服务器定时从git上更新代码</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/03/22/shell01/">shell 入门实战01 --实验楼</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-project">project</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/02/21/project2018/">2018年度计划</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-shell proxy">shell proxy</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/02/07/proxy/">centos下安装shadowsocket客户端使用</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-shell powershell share">shell powershell share</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/03/01/window/">无gui使用window server 1709</a>
-          </li>
-        </ul>
-        
-    </div>
-    
+      </div>
+      <a class="more" href="/2018/02/02/one/">Read more</a>
+    </article>
+  
+
+  
+    <div class="guide-pager">
+  
+    <a href="/page/4/"><span class="page-arrow">← </span>Prev</a>
+  
+  
+    <a class="unvisible" href="/">Next <span class="page-arrow">→</span></a>
+  
+</div>
+  
 </main>
 
-<script>
-  (function () {
-    var url = 'http://yoursite.com/tags/index.html'
-    $('#article-banner').geopattern(url)
-    $('.header').removeClass('fixed-header')
 
-    var tag = location.hash.replace('#', '')
-    if (tag) {
-      var tagId = "#tag-" + tag;
-      $("html, body").animate({
-        scrollTop: $(tagId).offset().top 
-      }, 400)
-    }
-  })();
-</script>
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
