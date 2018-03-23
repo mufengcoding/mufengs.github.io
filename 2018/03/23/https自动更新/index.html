@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="闲心  小憩">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      https证书相关 | mufengs 平行空间
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>mufengs 平行空间</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>https证书相关</h2>
+  <p class="post-date">2018-03-23</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>转载：原文链接<a href="https://www.williamyao.com/index.php/archives/1438/" target="_blank" rel="noopener">https://www.williamyao.com/index.php/archives/1438/</a></p>
+<p>我使用的TLS-SNI这种方式，比较简单一点</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首先，就在昨天，从StartSSL申请的为期一年的SSL证书到期了，Renew了新的email证书和所有相关DV证书更新进nginx之后，发现所有浏览器（IE/Firefox/Chromium）全都提示证书安全方面的问题，于是花时间仔细调研了一番，突然震惊的发现如下信息：<br>Firefox浏览器背后的Mozilla基金会正在考虑对沃通（WoSign）及被其秘密收购的StartCom（著名的StartSSL即其旗下产品）这两个CA一年内新签发的所有SSL证书进行封杀。Mozilla的工程师是在对这两个CA签发了一系列可疑的SSL SHA-1证书进行调查之后，宣布了这个禁令。<br>这两家CA试图规避已经被我大中华山东大学数学教授王小云对撞破解后宣布不再安全的SHA-1算法的停用政策。</p>
+<p>沃通秘密收购了StartCom，在2016年采用倒填日期的手段来签发SHA-1证书。</p>
+<p>Mozilla说这个临时封杀仅针对这两个公司最新签发的证书，不影响已经分发给他们的客户的证书。如果这两个公司在一年的封杀后没有通过一系列的检查，Mozilla将准备封杀这两个公司的所有证书。</p>
+<p>此外，Chrome 和其它产品的对它们的封杀也在计划中。</p>
+<p>怎么说呢，这年头信仰的缺失总会带来很大问题，也许有一天迪菲－赫尔曼密钥交换算法也变得不再安全了呢……</p>
+<p>综合以上原因，也该暂时放弃StartSSL的SHA-1证书，改投目前我认为一定会火起来的Let’s Encrypt项目吧。</p>
+<p>Let’s Encrypt<br>Let’s Encrypt是国外一个公共的免费SSL项目，由Linux基金会托管，由Mozilla、思科、Akamai、IdenTrust和EFF等组织发起，目的就是向网站自动签发和管理免费证书。</p>
+<p>看这介绍就觉得很牛，一直懒得去尝试，现在终于是出手的机会了。</p>
+<h2 id="本文目的"><a href="#本文目的" class="headerlink" title="本文目的"></a>本文目的</h2><p>阅读完本文，我希望使你能够达成如下目的：</p>
+<p>暂时忘了StartSSL<br>了解Let’s Encrypt<br>为你的ubuntu + nginx一路搞定新的SSL证书<br>废话不多说，我们开始。</p>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><p>本文使用Let’s Encrypt推荐的ACME工具Certbot以达到官方指导的证书自动获取、安装、更新、维护的目的，感兴趣的童鞋请访问下面两个网站了解来龙去脉（鸟语版）：</p>
+<p>Let’s Encrypt</p>
+<p>Certbot</p>
+<p>性子急的童鞋，请继续往下看，我们正式开始。</p>
+<p>环境假设<br>Ubuntu 16.04 LTS<br>nginx 1.8<br>sudo太麻烦，所有命令全在# root权限下执行<br>配置APT安装Certbot<br>首先确定你有add-apt-repository命令，如果没有，先装上：</p>
+<h1 id="apt-install-software-properties-common"><a href="#apt-install-software-properties-common" class="headerlink" title="apt install software-properties-common"></a>apt install software-properties-common</h1><p>执行下面脚本安装Certbot</p>
+<h1 id="add-apt-repository-ppa-certbot-certbot"><a href="#add-apt-repository-ppa-certbot-certbot" class="headerlink" title="add-apt-repository ppa:certbot/certbot"></a>add-apt-repository ppa:certbot/certbot</h1><h1 id="sudo-apt-update"><a href="#sudo-apt-update" class="headerlink" title="sudo apt update"></a>sudo apt update</h1><h1 id="sudo-apt-install-certbot"><a href="#sudo-apt-install-certbot" class="headerlink" title="sudo apt install certbot"></a>sudo apt install certbot</h1><p>执行# certbot -h，如果看到说明信息，就表示安装成功了（一般APT安装不会失败）</p>
+<p>注册Certbot<br>其实这是Certbot提供的一个帮助性服务：</p>
+<h1 id="certbot-register"><a href="#certbot-register" class="headerlink" title="certbot register"></a>certbot register</h1><p>执行上面这个命令，同意几个协议，填写一个邮箱，将来如果不小心丢了证书凭证，可以通过邮箱找回，挺好的，注册吧。</p>
+<p>了解Certbot<br>这里要说明一些关于Certbot的内容，首先这个工具是安装在服务器上的，可以自动搞定SSL证书的工具，它有两种常用的获得证书的途径，HTTP/TLS-SNI，具体技术细节在这里就不啰嗦了，你只需要选择一种：</p>
+<p>HTTP：你需要开着nginx且可以通过HTTP正常访问（不能开HTTPS）<br>TLS-SNI：你需要暂时关闭nginx，因为Certbot会临时打开自己的小服务器获取证书，80端口得给它空出来<br>HTTP方式<br>因为我之前的证书在更换成Let’s Encrypt项目之前就已经过期了，加上Certbot不能通过HTTPS方式验证域名（网站）的有效性，所以我先将nginx虚机配置中所有跟SSL有关的项目全部注释掉，同时保证nginx reload之后还能正常跑起来，这里可以放心，网站内容能不能正常看并不重要，唯一需要注意的一点是，Certbot在执行完下面这条命令后，会在网站根目录新建一个.well-known目录，你需要保证你的nginx能够解析这个目录（最好的办法是丢个文本文件进去，看看能不能通过浏览器读到里面的内容）。</p>
+<p>再次注意：执行下面这个命令需要你的nginx运行正常，且要满足上面一段话中的要求，不然证书申请会因为通过域名访问不了你的虚机而卡在反向认证环节。</p>
+<h1 id="certbot-certonly-w-home-wwwroot-www-williamyao-com-d-williamyao-com-d-www-williamyao-com"><a href="#certbot-certonly-w-home-wwwroot-www-williamyao-com-d-williamyao-com-d-www-williamyao-com" class="headerlink" title="certbot certonly -w /home/wwwroot/www.williamyao.com -d williamyao.com -d www.williamyao.com"></a>certbot certonly -w /home/wwwroot/www.williamyao.com -d williamyao.com -d www.williamyao.com</h1><p>解释一下上面命令的意思：</p>
+<p>-w：指定nginx虚机根目录（nginx虚机配置.conf里面的root项），其实就是用来指挥远程服务反向读取这个目录下面的.well-known文件夹看看能不能访问到，以验证域名的真实性。</p>
+<p>-d：连着两个，表示配合-w指明的虚机目录，总共有这两个域名指向同一个虚机，这两个域名会打包在一个证书里面。</p>
+<p>TLS-SNI方式<br>这里就比较简单了，因为不牵扯反向认证的问题，但是也有一点，nginx（或者80端口）得给Certbot空出来，它需要启动自己的小服务器来认证。</p>
+<h1 id="certbot-certonly-–standalone-d-williamyao-com-d-www-williamyao-com"><a href="#certbot-certonly-–standalone-d-williamyao-com-d-www-williamyao-com" class="headerlink" title="certbot certonly –standalone -d williamyao.com -d www.williamyao.com"></a>certbot certonly –standalone -d williamyao.com -d www.williamyao.com</h1><p>这一步和HTTP方式的不同总共有两点：一是nginx开关问题，二是以后证书的自动更新（Renew）问题，这个后面紧接着会讨论，得到的证书等文件以及存放路径都是一样的。</p>
+<p>得到的东西<br>不管选择哪种方式，在成功执行完毕后，都会得到下面的东西：</p>
+<p>/etc/letsencrypt/live/williamyao.com/<br>privkey.pem  : the private key for your certificate.<br>fullchain.pem: the certificate file used in most server software.<br>chain.pem    : used for OCSP stapling in Nginx &gt;=1.3.7.<br>cert.pem     : will break many server configurations, and should not be used.<br>对于nginx来说，我们只需要关心前两个文件，一个是秘钥，一个是证书。</p>
+<p>配置nginx虚机的conf<br>以我的配置为例，编辑/usr/local/nginx/conf/vhost/www.williamyao.com/conf，将原来所有跟SSL有关的配置项删掉（如果有），然后加入下面的配置：</p>
+<h1 id="启用-SSL-配置"><a href="#启用-SSL-配置" class="headerlink" title="启用 SSL 配置"></a>启用 SSL 配置</h1><p>ssl_prefer_server_ciphers on;<br>ssl_certificate /etc/letsencrypt/live/williamyao.com/fullchain.pem;<br>ssl_certificate_key /etc/letsencrypt/live/williamyao.com/privkey.pem;<br>ssl_protocols TLSv1 TLSv1.1 TLSv1.2;<br>ssl_ciphers “EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS !RC4”;<br>keepalive_timeout 70;<br>ssl_session_cache shared:SSL:10m;<br>ssl_session_timeout 10m;</p>
+<h1 id="强制全站使用HTTPS（如果不想全部使用HTTPS，请注释掉下面三行）"><a href="#强制全站使用HTTPS（如果不想全部使用HTTPS，请注释掉下面三行）" class="headerlink" title="强制全站使用HTTPS（如果不想全部使用HTTPS，请注释掉下面三行）"></a>强制全站使用HTTPS（如果不想全部使用HTTPS，请注释掉下面三行）</h1><p>add_header Strict-Transport-Security max-age=63072000;<br>add_header X-Frame-Options DENY;<br>add_header X-Content-Type-Options nosniff;<br>将ssl_certificate和ssl_certificate_key替换为得到的东西里面的证书和秘钥，至于其他配置项的意思，请自行度娘。</p>
+<p>重启nginx验收<br>有些人喜欢reload，我就喜欢重启！</p>
+<h1 id="service-nginx-restart"><a href="#service-nginx-restart" class="headerlink" title="service nginx restart"></a>service nginx restart</h1><p>如果不出意外，等服务跑起来，打开浏览器看看结构，是不是HTTPS和证书信息都正常？恭喜你！但是！还没完……</p>
+<p>配置自动更新<br>其实我觉得呢，这一步才是Certbot最吸引人的地方，因为Let’s Encrypt项目提供的证书有效期只有90天，频繁更新是挺烦人的事情，因此Certbot在手动执行自动更新证书命令的同时，也支持crontab计划表执行。</p>
+<p>命令解释<br>首先看一下下面的命令：</p>
+<h1 id="certbot-renew-–dry-run"><a href="#certbot-renew-–dry-run" class="headerlink" title="certbot renew –dry-run"></a>certbot renew –dry-run</h1><p>这个命令的意思是，让certbot模拟更新一下已有证书，测试一下是否都能正常更新，但只是模拟全程，并不改写现有文件。</p>
+<p>针对上面提到的需要选择的获得证书的两种方式，这个自动更新命令需要小有调整，</p>
+<p>对于HTTP方式，需要保证nginx是在运行的，所以我们用上Certbot支持的钩子机制：</p>
+<h1 id="certbot-renew-–pre-hook-“service-nginx-start”-–post-hook-“service-nginx-restart”-–dry-run"><a href="#certbot-renew-–pre-hook-“service-nginx-start”-–post-hook-“service-nginx-restart”-–dry-run" class="headerlink" title="certbot renew –pre-hook “service nginx start” –post-hook “service nginx restart” –dry-run"></a>certbot renew –pre-hook “service nginx start” –post-hook “service nginx restart” –dry-run</h1><p>上面命令的意思很简单，在执行renew动作之前，先执行service nginx start命令，确保nginx服务是起来的，在执行完renew动作之后，再执行service nginx restart来重启nginx确保更新完的证书及时加入nginx服务。</p>
+<p>如果是TLS-SNI方式呢，命令稍作修改：</p>
+<h1 id="certbot-renew-–pre-hook-“service-nginx-stop”-–post-hook-“service-nginx-start”-–dry-run"><a href="#certbot-renew-–pre-hook-“service-nginx-stop”-–post-hook-“service-nginx-start”-–dry-run" class="headerlink" title="certbot renew –pre-hook “service nginx stop” –post-hook “service nginx start” –dry-run"></a>certbot renew –pre-hook “service nginx stop” –post-hook “service nginx start” –dry-run</h1><p>也很好理解嘛。</p>
+<p>配置crontab<br>真正配置生产环境的时候，我们不会想没事儿SSH到服务器上手动执行Certbot的，我们需要crontab的自动方式，啥是crontab，请自行度娘 Again.</p>
+<h1 id="crontab-e"><a href="#crontab-e" class="headerlink" title="crontab -e"></a>crontab -e</h1><p>选择一个文本编辑器之后会自动打开crontab的任务文件，新加入一行对应命令，以我为例，每周二四六的凌晨三点检查更新证书，</p>
+<p>HTTP方式：</p>
+<p>0 3 <em> </em> 2,4,6 certbot renew -q –pre-hook “service nginx start” –post-hook “service nginx restart”<br>TLS-SNI方式：</p>
+<p>0 3 <em> </em> 2,4,6 certbot renew -q –pre-hook “service nginx stop” –post-hook “service nginx start”<br>保存文件，关闭编辑器之后，crontab就自动按照我们的设定开始新的值守任务了。</p>
+<p>注意1：因为是自动运行，我们只关心出错时的信息，所以带上-q开关，忽略所有非错误的信息。</p>
+<p>注意2：因为是生产环境，是真的让它更新，所以去掉–dry-run模拟开关。</p>
+<p>注意3：本章节所有renew命令，Certbot都会预先检查证书的有效期，只有临近过期的证书，才真正会被更新，其它“离着作废还早”的证书是会被智能略过的，所以引用官网上的一句说法，“很可能执行完更新命令，什么也没有发生。”</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>真的不得不说，StartSSL有点让我伤心，之前还写过一片详细的新手教程，现在也不用再看了。</p>
+<p>也许有那么一天，任何东西都不再有加密的必要……</p>
+<p>那是共产主义吗？！</p>
+<p>因为已经到了头昏脑涨的凌晨一点多，所以此文文风略显“彪悍”，望君海涵！</p>
+<p>还是那句话，衷心希望此文能够帮到你。</p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#https" >
+    <span class="tag-code">https</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#前言"><span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#本文目的"><span class="toc-nav-text">本文目的</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#具体步骤"><span class="toc-nav-text">具体步骤</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#apt-install-software-properties-common"><span class="toc-nav-text">apt install software-properties-common</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#add-apt-repository-ppa-certbot-certbot"><span class="toc-nav-text">add-apt-repository ppa:certbot/certbot</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#sudo-apt-update"><span class="toc-nav-text">sudo apt update</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#sudo-apt-install-certbot"><span class="toc-nav-text">sudo apt install certbot</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#certbot-register"><span class="toc-nav-text">certbot register</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#certbot-certonly-w-home-wwwroot-www-williamyao-com-d-williamyao-com-d-www-williamyao-com"><span class="toc-nav-text">certbot certonly -w /home/wwwroot/www.williamyao.com -d williamyao.com -d www.williamyao.com</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#certbot-certonly-–standalone-d-williamyao-com-d-www-williamyao-com"><span class="toc-nav-text">certbot certonly –standalone -d williamyao.com -d www.williamyao.com</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#启用-SSL-配置"><span class="toc-nav-text">启用 SSL 配置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#强制全站使用HTTPS（如果不想全部使用HTTPS，请注释掉下面三行）"><span class="toc-nav-text">强制全站使用HTTPS（如果不想全部使用HTTPS，请注释掉下面三行）</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#service-nginx-restart"><span class="toc-nav-text">service nginx restart</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#certbot-renew-–dry-run"><span class="toc-nav-text">certbot renew –dry-run</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#certbot-renew-–pre-hook-“service-nginx-start”-–post-hook-“service-nginx-restart”-–dry-run"><span class="toc-nav-text">certbot renew –pre-hook “service nginx start” –post-hook “service nginx restart” –dry-run</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#certbot-renew-–pre-hook-“service-nginx-stop”-–post-hook-“service-nginx-start”-–dry-run"><span class="toc-nav-text">certbot renew –pre-hook “service nginx stop” –post-hook “service nginx start” –dry-run</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#crontab-e"><span class="toc-nav-text">crontab -e</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#后记"><span class="toc-nav-text">后记</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2018/03/23/https自动更新/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "mufengcoding";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "https证书相关",
+        owner: "mufengcoding",
+        repo: "mufengs.github.io",
+        oauth: {
+          client_id: "fffeca946155c9998dca",
+          client_secret: "180b7ed7559d3642b0b546eaeb69bc8deaf7cd63"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
