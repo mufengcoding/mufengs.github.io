@@ -174,9 +174,12 @@
 友情链接： <a href="#">mufengs'blog</a> | <a href="docker.mufengs.com">docker实战</a>
 </p>
   <p class="copyright">
-    &copy; 2018 | powered by <a href="https://hexo.io" target="_blank">Hexo</a> | <span id="busuanzi_container_site_uv">
+    &copy; 2018 | powered by <a href="https://hexo.io" target="_blank">Hexo</a> 
+	<br>
+	<span id="busuanzi_container_site_uv">
+  欢迎来自<span id="location"></span> | <span id="ip"></span>，
   你是<span id="busuanzi_value_site_uv"></span>位小伙伴
-</span>
+   </span>
     <br>
     <span id="busuanzi_container_site_pv">
    总访问量<span id="busuanzi_value_site_pv"></span>次
@@ -199,7 +202,13 @@
     FastClick.attach(document.body);
   })
 </script>
-
+<script>
+  $.getJSON("//ip.wheff7.com/ipinfo", function(data) {
+    console.log(data)
+	document.getElementById('location').innerHTML=data[1].country_nameCN+data[1].mostSpecificSubdivision_nameCN+data[1].city_nameCN;
+	document.getElementById('ip').innerHTML=data.onlineip;
+  });
+</script>
 <script>
   var hasLine = 'true';
   async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
