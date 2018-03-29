@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/plugins/gitment.css">
   <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
   <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
   <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
   <script src="/js/qrious.js"></script>
@@ -125,6 +127,8 @@
 <h3 id="启用-SSL-配置"><a href="#启用-SSL-配置" class="headerlink" title="启用 SSL 配置"></a>启用 SSL 配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS !RC4";</span><br><span class="line">keepalive_timeout 70;</span><br><span class="line">ssl_session_cache shared:SSL:10m;</span><br><span class="line">ssl_session_timeout 10m;</span><br><span class="line"></span><br><span class="line">add_header Strict-Transport-Security max-age=63072000;</span><br><span class="line">add_header X-Frame-Options DENY;</span><br><span class="line">add_header X-Content-Type-Options nosniff;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p> 强制全站使用HTTPS（如果不想全部使用HTTPS，请注释掉下面三行）</p>
+</blockquote>
+<blockquote>
 <p>#add_header Strict-Transport-Security max-age=63072000;</p>
 <p>#add_header X-Frame-Options DENY;</p>
 <p>#add_header X-Content-Type-Options nosniff;</p>
@@ -278,6 +282,12 @@
   <span class="arrow-icon"></span>
 </div>
     <footer class="app-footer">
+ <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
 <p>
 友情链接： <a href="#">mufengs'blog</a> | <a href="docker.mufengs.com">docker实战</a>
 </p>

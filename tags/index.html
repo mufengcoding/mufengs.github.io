@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/plugins/gitment.css">
   <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
   <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
   <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
   <script src="/js/qrious.js"></script>
@@ -118,21 +120,21 @@
 <main class="app-body">
   <div id="tag-cloud">
     
-      <a class="tag2" data-name="tag-docker">docker</a>
+      <a class="tag3" data-name="tag-docker">docker</a>
     
       <a class="tag1" data-name="tag-https">https</a>
     
       <a class="tag1" data-name="tag-rancher">rancher</a>
     
-      <a class="tag2" data-name="tag-life">life</a>
+      <a class="tag1" data-name="tag-mysql">mysql</a>
     
-      <a class="tag0" data-name="tag-mysql">mysql</a>
+      <a class="tag1" data-name="tag-life">life</a>
     
-      <a class="tag0" data-name="tag-shell">shell</a>
+      <a class="tag1" data-name="tag-shell">shell</a>
     
-      <a class="tag3" data-name="tag-shell proxy">shell proxy</a>
+      <a class="tag2" data-name="tag-shell proxy">shell proxy</a>
     
-      <a class="tag3" data-name="tag-vim">vim</a>
+      <a class="tag1" data-name="tag-vim">vim</a>
     
       <a class="tag3" data-name="tag-shell powershell share">shell powershell share</a>
     
@@ -160,13 +162,13 @@
       
         <ul class="tag-preview">
           <li>
-            <a href="/2018/03/23/https自动更新/">https证书相关</a>
+            <a href="/2018/03/23/https证书/">解决https证书替换问题--getting Refused to execute script from '*' because its MIME type ('application/json') is not executable</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/2018/03/23/https证书/">解决https证书替换问题--getting Refused to execute script from '*' because its MIME type ('application/json') is not executable</a>
+            <a href="/2018/03/23/https自动更新/">https证书相关</a>
           </li>
         </ul>
         
@@ -184,6 +186,17 @@
     </div>
     
     <div class="tag-list">
+      <h3 class="tag-name" id="tag-mysql">mysql</h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/2018/03/23/mysql字符集乱码/">mysql字符集乱码</a>
+          </li>
+        </ul>
+        
+    </div>
+    
+    <div class="tag-list">
       <h3 class="tag-name" id="tag-life">life</h3>
       
         <ul class="tag-preview">
@@ -195,17 +208,6 @@
         <ul class="tag-preview">
           <li>
             <a href="/2018/02/21/person_1/">浮世三千</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-mysql">mysql</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/03/23/mysql字符集乱码/">mysql字符集乱码</a>
           </li>
         </ul>
         
@@ -282,6 +284,12 @@
   <span class="arrow-icon"></span>
 </div>
     <footer class="app-footer">
+ <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
 <p>
 友情链接： <a href="#">mufengs'blog</a> | <a href="docker.mufengs.com">docker实战</a>
 </p>
