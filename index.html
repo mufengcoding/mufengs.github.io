@@ -127,6 +127,28 @@ var _hmt = _hmt || [];
   
     <article class="article-card">
       <h2 class="article-head">
+        <a href="/2018/04/02/记一次tomcat-解析不了url-因为包含-这个非保留字符/">记一次tomcat 解析不了url 因为包含{}这个非保留字符</a>
+      </h2>
+      <p class="article-date">April 2, 2018</p>
+      
+        
+  <a href="/tags#tomcat" >
+    <span class="tag-code">tomcat</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          修改…/conf/catalina.properties
+找到最后注释掉的一行＃tomcat.util.http.parser.HttpParser.requestTargetAllow=| ，
+改成tomcat.util.http.parser.HttpParser.requestTarg ...
+        
+      </div>
+      <a class="more" href="/2018/04/02/记一次tomcat-解析不了url-因为包含-这个非保留字符/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
         <a href="/2018/03/31/k8s/">ranhcer公开课第三期</a>
       </h2>
       <p class="article-date">March 31, 2018</p>
@@ -327,27 +349,6 @@ service docker start &amp;&amp; systemctl enable docker
         
       </div>
       <a class="more" href="/2018/03/04/life2/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2018/03/01/window/">无gui使用window server 1709</a>
-      </h2>
-      <p class="article-date">March 1, 2018</p>
-      
-        
-  <a href="/tags#shell powershell share" >
-    <span class="tag-code">shell powershell share</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          创建共享文件夹net share TestShare333=C:\Users\Administrator\Downloads /users:25 /remark:”test share of the acc”
-查看共享信息 Get-WmiObject -Class Win32_Share 或 ...
-        
-      </div>
-      <a class="more" href="/2018/03/01/window/">Read more</a>
     </article>
   
 
