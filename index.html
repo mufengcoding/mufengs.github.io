@@ -127,6 +127,59 @@ var _hmt = _hmt || [];
   
     <article class="article-card">
       <h2 class="article-head">
+        <a href="/2018/04/10/云主机个人网站sshd防范/">云主机个人网站sshd防范</a>
+      </h2>
+      <p class="article-date">April 10, 2018</p>
+      
+      <div class="article-summary">
+        
+          自动同步东北大学网络应急响应组IP黑名单防止SSH恶意攻击这里推荐使用东北大学网络应急响应组（NEUCERT)的IP黑名单
+黑名单中包括了NEUCERT通过蜜罐收集的IP地址列表并与sshbl.org提供的列表进行合并
+生成新的hosts.deny，黑名单每五分钟更新一次，并提供了自动更新脚 ...
+        
+      </div>
+      <a class="more" href="/2018/04/10/云主机个人网站sshd防范/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2018/04/10/docker部署tomcat-nginx-mysql应用/">docker部署tomcat+nginx+mysql应用</a>
+      </h2>
+      <p class="article-date">April 10, 2018</p>
+      
+      <div class="article-summary">
+        
+          部署mysql添加私有镜像加速器
+将下面添加到/etc/docker/daemon.json里面
+12345678 "registry-mirrors": [        "http://05924529.m.daocloud.io"    ]```   重启docker```shelld ...
+        
+      </div>
+      <a class="more" href="/2018/04/10/docker部署tomcat-nginx-mysql应用/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2018/04/10/记一次docker下tomcat生成水印图片字体乱码/">记一次docker下tomcat生成水印图片字体乱码</a>
+      </h2>
+      <p class="article-date">April 10, 2018</p>
+      
+      <div class="article-summary">
+        
+          现象生成的图片上中文字体成了□□□□□这种类型
+检查容器字体，发现中文字体是空的
+添加字体首先把需要的字体放到共享的目录下
+docker exec -it demo /bin/bash
+1.字体拷贝,比如拷贝宋体
+cp simsun.ttc /usr/share/fonts/
+扫描生成字体
+ ...
+        
+      </div>
+      <a class="more" href="/2018/04/10/记一次docker下tomcat生成水印图片字体乱码/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
         <a href="/2018/04/02/记一次tomcat-解析不了url-因为包含-这个非保留字符/">记一次tomcat 解析不了url 因为包含{}这个非保留字符</a>
       </h2>
       <p class="article-date">April 2, 2018</p>
@@ -196,27 +249,6 @@ var _hmt = _hmt || [];
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2018/03/23/https证书/">解决https证书替换问题--getting Refused to execute script from '*' because its MIME type ('application/json') is not executable</a>
-      </h2>
-      <p class="article-date">March 23, 2018</p>
-      
-        
-  <a href="/tags#https" >
-    <span class="tag-code">https</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          在nginx中错误使用了全站https，去掉那个限制即可
-启用 SSL 配置1234567891011ssl_prefer_server_ciphers on;ssl_protocols TLSv1 TLSv1.1 TLSv1.2;ssl_ciphers "EECDH+ECDSA+AESGC ...
-        
-      </div>
-      <a class="more" href="/2018/03/23/https证书/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
         <a href="/2018/03/23/https自动更新/">https证书相关</a>
       </h2>
       <p class="article-date">March 23, 2018</p>
@@ -235,6 +267,27 @@ var _hmt = _hmt || [];
         
       </div>
       <a class="more" href="/2018/03/23/https自动更新/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2018/03/23/https证书/">解决https证书替换问题--getting Refused to execute script from '*' because its MIME type ('application/json') is not executable</a>
+      </h2>
+      <p class="article-date">March 23, 2018</p>
+      
+        
+  <a href="/tags#https" >
+    <span class="tag-code">https</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          在nginx中错误使用了全站https，去掉那个限制即可
+启用 SSL 配置1234567891011ssl_prefer_server_ciphers on;ssl_protocols TLSv1 TLSv1.1 TLSv1.2;ssl_ciphers "EECDH+ECDSA+AESGC ...
+        
+      </div>
+      <a class="more" href="/2018/03/23/https证书/">Read more</a>
     </article>
   
     <article class="article-card">
@@ -279,76 +332,6 @@ var _hmt = _hmt || [];
         
       </div>
       <a class="more" href="/2018/03/22/shell01/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2018/03/16/docker02/">docker 实战02 搭建vm的harbor仓库</a>
-      </h2>
-      <p class="article-date">March 16, 2018</p>
-      
-        
-  <a href="/tags#docker" >
-    <span class="tag-code">docker</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          更新操作系统
-yum update
-
-安装基本环境
-yum install  -y docker &amp;&amp; yum install docker-compose
-
-
-service docker start &amp;&amp; systemctl enable docker
-
- ...
-        
-      </div>
-      <a class="more" href="/2018/03/16/docker02/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2018/03/12/docker01/">docker 实战01 制作docsify镜像</a>
-      </h2>
-      <p class="article-date">March 12, 2018</p>
-      
-        
-  <a href="/tags#docker" >
-    <span class="tag-code">docker</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          dockerfile如下1234567From Node:6Maintainer Mufeng &lt;Mufeng5619@Gmail.Com&gt;Run Npm I Docsify-Cli -GRun Mkdir DocsRun Docsify Init ./DocsExpose 30 ...
-        
-      </div>
-      <a class="more" href="/2018/03/12/docker01/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2018/03/04/life2/">懒惰是最大的敌人</a>
-      </h2>
-      <p class="article-date">March 4, 2018</p>
-      
-        
-  <a href="/tags#life" >
-    <span class="tag-code">life</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          壹 - 感触  最近工作是不是很积极，有自我反省过。但是总是改不了，自制力太差的毛病。
-  都说一个能够战胜自己缺点的人才会有走上巅峰的一刻，没有人会永远的帮你，也没有那个义务。只能自己真正的强大，才可以做到勇者无惧。这个词语很好，只有你是勇者了，才会无惧。不然只能做个唯唯诺诺的懦夫，安于现 ...
-        
-      </div>
-      <a class="more" href="/2018/03/04/life2/">Read more</a>
     </article>
   
 
